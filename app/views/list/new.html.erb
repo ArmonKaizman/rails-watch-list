@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <h1>Create a New List</h1>
+
+  <%= simple_form_for @list, html: { class: "form" } do |f| %>
+    <div class="form-group">
+      <%= f.input :name, label: "List Name", input_html: { placeholder: "Enter the list name" } %>
+    </div>
+
+    <div class="actions">
+      <%= f.button :submit, "Create List", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
