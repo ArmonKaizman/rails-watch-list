@@ -1,8 +1,8 @@
-class ListController < ApplicationController
+class ListsController < ApplicationController
   before_action :set_list, only: %i[show]
 
   def index
-    @list_all = List.all
+    @lists = List.all
   end
 
   def show
@@ -15,7 +15,7 @@ class ListController < ApplicationController
   def create
     @list = List.new(list_params)
     if @list.save
-      redirect_to show_list_path(@list), notice: "List was successfully created."
+      redirect_to list_path(@list), notice: "List was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
